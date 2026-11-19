@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dte1uglka3qdv" path="res://Jugadores/SIST_SAFI/SISTSAFI_Lateral2-Sheet.png" id="7_2m07j"]
 [ext_resource type="Texture2D" uid="uid://b73w7re0qjfn1" path="res://Jugadores/SIST_SAFI/SISTSAFI_Lateral1-Sheet.png" id="8_mpktp"]
 [ext_resource type="Script" uid="uid://cnueq58emvyvt" path="res://salir_salon.gd" id="9_salir_salon"]
-[ext_resource type="AudioStream" uid="uid://bn3si28dt6w2g" path="res://Musica/2.mp3.wav" id="10_phrex"]
+[ext_resource type="AudioStream" uid="uid://pc76rt16qw82" path="res://Musica/2.mp3" id="10_phrex"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y6rlv"]
 texture = ExtResource("1_3txay")
@@ -476,4 +476,6 @@ text = "E para salir del salón"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1845111063]
 stream = ExtResource("10_phrex")
 volume_db = 4.269
+pitch_scale = 1.25
 autoplay = true
+parameters/looping = true
