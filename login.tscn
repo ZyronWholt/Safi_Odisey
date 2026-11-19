@@ -54,20 +54,20 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 
-[node name="EtiquetaUsuario" type="Label" parent="Panel/Contenido"]
+[node name="EtiquetaCorreo" type="Label" parent="Panel/Contenido"]
 layout_mode = 2
-text = "Usuario"
+text = "Correo electrónico"
 
-[node name="Usuario" type="LineEdit" parent="Panel/Contenido"]
+[node name="input_email" type="LineEdit" parent="Panel/Contenido"]
 layout_mode = 2
 custom_minimum_size = Vector2(280, 38)
-placeholder_text = "Ingresa tu usuario"
+placeholder_text = "tu@correo.com"
 
 [node name="EtiquetaContrasena" type="Label" parent="Panel/Contenido"]
 layout_mode = 2
 text = "Contraseña"
 
-[node name="Contrasena" type="LineEdit" parent="Panel/Contenido"]
+[node name="input_password" type="LineEdit" parent="Panel/Contenido"]
 layout_mode = 2
 custom_minimum_size = Vector2(280, 38)
 placeholder_text = "Ingresa tu contraseña"
@@ -77,15 +77,33 @@ secret = true
 custom_minimum_size = Vector2(0, 4)
 layout_mode = 2
 
-[node name="IniciarSesion" type="Button" parent="Panel/Contenido"]
+[node name="lbl_message" type="Label" parent="Panel/Contenido"]
+layout_mode = 2
+text = ""
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="btn_login" type="Button" parent="Panel/Contenido"]
 layout_mode = 2
 custom_minimum_size = Vector2(280, 42)
 text = "Iniciar sesión"
 
-[node name="CrearCuenta" type="Button" parent="Panel/Contenido"]
+[node name="btn_forgot_password" type="Button" parent="Panel/Contenido"]
+layout_mode = 2
+custom_minimum_size = Vector2(280, 38)
+text = "¿Olvidaste tu contraseña?"
+
+[node name="btn_google_login" type="Button" parent="Panel/Contenido"]
 layout_mode = 2
 custom_minimum_size = Vector2(280, 42)
-text = "Crear una cuenta"
+text = "G  Iniciar sesión con Google"
 
-[connection signal="pressed" from="Panel/Contenido/IniciarSesion" to="." method="_on_login_pressed"]
-[connection signal="pressed" from="Panel/Contenido/CrearCuenta" to="." method="_on_create_account_pressed"]
+[node name="btn_go_to_register" type="Button" parent="Panel/Contenido"]
+layout_mode = 2
+custom_minimum_size = Vector2(280, 42)
+text = "¿No tienes cuenta? Regístrate"
+
+[connection signal="pressed" from="Panel/Contenido/btn_login" to="." method="_on_login_pressed"]
+[connection signal="pressed" from="Panel/Contenido/btn_forgot_password" to="." method="_on_forgot_password_pressed"]
+[connection signal="pressed" from="Panel/Contenido/btn_google_login" to="." method="_on_google_login_pressed"]
+[connection signal="pressed" from="Panel/Contenido/btn_go_to_register" to="." method="_on_go_to_register_pressed"]
