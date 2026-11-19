@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cdl42es5mo0uj" path="res://Jugadores/SIST_SAFI/SISTSAFI_Frontal-Sheet.png" id="6_34skj"]
 [ext_resource type="Texture2D" uid="uid://dte1uglka3qdv" path="res://Jugadores/SIST_SAFI/SISTSAFI_Lateral2-Sheet.png" id="7_2m07j"]
 [ext_resource type="Texture2D" uid="uid://b73w7re0qjfn1" path="res://Jugadores/SIST_SAFI/SISTSAFI_Lateral1-Sheet.png" id="8_mpktp"]
+[ext_resource type="Script" uid="uid://cnueq58emvyvt" path="res://salir_salon.gd" id="9_salir_salon"]
+[ext_resource type="AudioStream" uid="uid://bn3si28dt6w2g" path="res://Musica/2.mp3.wav" id="10_phrex"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y6rlv"]
 texture = ExtResource("1_3txay")
@@ -410,7 +412,11 @@ animations = [{
 radius = 13.0
 height = 34.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3txay"]
+size = Vector2(95, 80)
+
 [node name="Salón_ISC" type="Node2D" unique_id=1833844747]
+script = ExtResource("9_salir_salon")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=208794914]
 position = Vector2(0, -1)
@@ -447,3 +453,27 @@ position = Vector2(0, 15)
 shape = SubResource("CapsuleShape2D_lcavk")
 
 [node name="Camera2D" type="Camera2D" parent="Jugador" unique_id=1713969802]
+
+[node name="InteraccionSalon" type="Area2D" parent="." unique_id=343261771]
+position = Vector2(79, 73)
+collision_layer = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteraccionSalon" unique_id=1813617119]
+position = Vector2(-42.5, 0)
+shape = SubResource("RectangleShape2D_3txay")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="InteraccionSalon" unique_id=111228723]
+
+[node name="Label" type="Label" parent="InteraccionSalon/CanvasLayer" unique_id=909017305]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 360.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 24
+text = "E para salir del salón"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1845111063]
+stream = ExtResource("10_phrex")
+volume_db = 4.269
+autoplay = true
