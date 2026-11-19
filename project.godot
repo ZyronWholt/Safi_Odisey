@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Safi_Odisey_1.0"
-run/main_scene="uid://nxsj1f16j8ox"
+run/main_scene="res://login.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

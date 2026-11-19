@@ -1,0 +1,97 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://crear_cuenta.gd" id="1_crear"]
+
+[node name="CrearCuenta" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_crear")
+
+[node name="Fondo" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.12, 0.18, 1)
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -210.0
+offset_right = 180.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Contenido" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Titulo" type="Label" parent="Panel/Contenido"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Crear cuenta"
+horizontal_alignment = 1
+
+[node name="Subtitulo" type="Label" parent="Panel/Contenido"]
+layout_mode = 2
+text = "Registro provisional"
+horizontal_alignment = 1
+
+[node name="SeparadorSuperior" type="Control" parent="Panel/Contenido"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="EtiquetaUsuario" type="Label" parent="Panel/Contenido"]
+layout_mode = 2
+text = "Usuario"
+
+[node name="Usuario" type="LineEdit" parent="Panel/Contenido"]
+layout_mode = 2
+custom_minimum_size = Vector2(280, 38)
+placeholder_text = "Elige un usuario"
+
+[node name="EtiquetaContrasena" type="Label" parent="Panel/Contenido"]
+layout_mode = 2
+text = "Contraseña"
+
+[node name="Contrasena" type="LineEdit" parent="Panel/Contenido"]
+layout_mode = 2
+custom_minimum_size = Vector2(280, 38)
+placeholder_text = "Crea una contraseña"
+secret = true
+
+[node name="SeparadorInferior" type="Control" parent="Panel/Contenido"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="Crear" type="Button" parent="Panel/Contenido"]
+layout_mode = 2
+custom_minimum_size = Vector2(280, 42)
+text = "Crear cuenta"
+
+[node name="Google" type="Button" parent="Panel/Contenido"]
+layout_mode = 2
+custom_minimum_size = Vector2(280, 42)
+text = "Continuar con Google"
+
+[node name="Volver" type="Button" parent="Panel/Contenido"]
+layout_mode = 2
+custom_minimum_size = Vector2(280, 38)
+text = "Volver al inicio de sesión"
+
+[connection signal="pressed" from="Panel/Contenido/Crear" to="." method="_on_create_pressed"]
+[connection signal="pressed" from="Panel/Contenido/Google" to="." method="_on_google_pressed"]
+[connection signal="pressed" from="Panel/Contenido/Volver" to="." method="_on_back_pressed"]
