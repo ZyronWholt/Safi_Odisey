@@ -447,3 +447,4 @@ position = Vector2(0, 14)
 shape = SubResource("CapsuleShape2D_lcavk")
 
 [node name="Camera2D" type="Camera2D" parent="Jugador" unique_id=1713969802]
+enabled = true
