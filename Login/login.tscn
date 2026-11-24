@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://dcgqv11mm8p85"]
+[gd_scene format=3 uid="uid://dbds3orker21e"]
 
-[ext_resource type="Script" uid="uid://c654m513uqwg7" path="res://login.gd" id="1_login"]
+[ext_resource type="Script" uid="uid://c654m513uqwg7" path="res://Login/login.gd" id="1_login"]
 
 [node name="Login" type="Control" unique_id=1756854010]
 layout_mode = 3

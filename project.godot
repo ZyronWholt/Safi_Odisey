@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Safi_Odisey_1.0"
-run/main_scene="res://login.tscn"
+run/main_scene="res://Login/login.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SupabaseManager="*uid://dl43v6u31e4st"
-EstadoJugador="*res://estado_jugador.gd"
+EstadoJugador="*res://Estados_Jugador/estado_jugador.gd"
 
 [display]
 

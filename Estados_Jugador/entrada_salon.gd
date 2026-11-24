@@ -30,7 +30,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 
 		EstadoJugador.save_map_position(player.global_position)
-		get_tree().change_scene_to_file("res://salón_isc.tscn")
+		get_tree().change_scene_to_file("res://Salones/Salón_ISC/salón_isc.tscn")
 
 func _on_interaccion_salon_body_entered(body: Node2D) -> void:
 	if body.name == "Jugador":

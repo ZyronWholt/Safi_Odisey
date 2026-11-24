@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://t06aa4ukt5ar"]
 
-[ext_resource type="Script" uid="uid://cwd0rj446q2m7" path="res://crear_cuenta.gd" id="1_crear"]
+[ext_resource type="Script" uid="uid://cwd0rj446q2m7" path="res://Login/crear_cuenta.gd" id="1_crear"]
 
 [node name="CrearCuenta" type="Control" unique_id=759968686]
 layout_mode = 3

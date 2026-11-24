@@ -7,7 +7,7 @@ extends Control
 @onready var lbl_message: Label = $Panel/Contenido/lbl_message
 @onready var btn_register: Button = $Panel/Contenido/btn_register
 
-const MAP_SCENE_PATH := "res://mapa_tesh.tscn"
+const MAP_SCENE_PATH := "res://Mapa_TESH/mapa_tesh.tscn"
 
 func _ready() -> void:
 	SupabaseManager.register_succeeded.connect(_on_register_succeeded)
@@ -62,4 +62,4 @@ func _show_error(message: String) -> void:
 	lbl_message.modulate = Color.RED
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://login.tscn")
+	get_tree().change_scene_to_file("res://Login/login.tscn")
