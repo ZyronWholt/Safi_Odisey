@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://dcgqv11mm8p85"]
 
-[ext_resource type="Script" path="res://login.gd" id="1_login"]
+[ext_resource type="Script" uid="uid://c654m513uqwg7" path="res://login.gd" id="1_login"]
 
-[node name="Login" type="Control"]
+[node name="Login" type="Control" unique_id=1756854010]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_login")
 
-[node name="Fondo" type="ColorRect" parent="."]
+[node name="Fondo" type="ColorRect" parent="." unique_id=865424278]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.08, 0.12, 0.18, 1)
 
-[node name="Panel" type="PanelContainer" parent="."]
+[node name="Panel" type="PanelContainer" parent="." unique_id=1743587199]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -34,73 +34,72 @@ offset_bottom = 190.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Contenido" type="VBoxContainer" parent="Panel"]
+[node name="Contenido" type="VBoxContainer" parent="Panel" unique_id=1918744898]
 layout_mode = 2
 theme_override_constants/separation = 12
 alignment = 1
 
-[node name="Titulo" type="Label" parent="Panel/Contenido"]
+[node name="Titulo" type="Label" parent="Panel/Contenido" unique_id=1692329419]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Safi Odisey"
 horizontal_alignment = 1
 
-[node name="Subtitulo" type="Label" parent="Panel/Contenido"]
+[node name="Subtitulo" type="Label" parent="Panel/Contenido" unique_id=1304210475]
 layout_mode = 2
 text = "Inicio de sesión"
 horizontal_alignment = 1
 
-[node name="SeparadorSuperior" type="Control" parent="Panel/Contenido"]
+[node name="SeparadorSuperior" type="Control" parent="Panel/Contenido" unique_id=89325297]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 
-[node name="EtiquetaCorreo" type="Label" parent="Panel/Contenido"]
+[node name="EtiquetaCorreo" type="Label" parent="Panel/Contenido" unique_id=1490693048]
 layout_mode = 2
 text = "Correo electrónico"
 
-[node name="input_email" type="LineEdit" parent="Panel/Contenido"]
-layout_mode = 2
+[node name="input_email" type="LineEdit" parent="Panel/Contenido" unique_id=1877097203]
 custom_minimum_size = Vector2(280, 38)
+layout_mode = 2
 placeholder_text = "tu@correo.com"
 
-[node name="EtiquetaContrasena" type="Label" parent="Panel/Contenido"]
+[node name="EtiquetaContrasena" type="Label" parent="Panel/Contenido" unique_id=1261186557]
 layout_mode = 2
 text = "Contraseña"
 
-[node name="input_password" type="LineEdit" parent="Panel/Contenido"]
-layout_mode = 2
+[node name="input_password" type="LineEdit" parent="Panel/Contenido" unique_id=457769082]
 custom_minimum_size = Vector2(280, 38)
+layout_mode = 2
 placeholder_text = "Ingresa tu contraseña"
 secret = true
 
-[node name="SeparadorInferior" type="Control" parent="Panel/Contenido"]
+[node name="SeparadorInferior" type="Control" parent="Panel/Contenido" unique_id=1408724457]
 custom_minimum_size = Vector2(0, 4)
 layout_mode = 2
 
-[node name="lbl_message" type="Label" parent="Panel/Contenido"]
+[node name="lbl_message" type="Label" parent="Panel/Contenido" unique_id=1154677248]
 layout_mode = 2
-text = ""
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="btn_login" type="Button" parent="Panel/Contenido"]
-layout_mode = 2
+[node name="btn_login" type="Button" parent="Panel/Contenido" unique_id=994799117]
 custom_minimum_size = Vector2(280, 42)
+layout_mode = 2
 text = "Iniciar sesión"
 
-[node name="btn_forgot_password" type="Button" parent="Panel/Contenido"]
-layout_mode = 2
+[node name="btn_forgot_password" type="Button" parent="Panel/Contenido" unique_id=1669900257]
 custom_minimum_size = Vector2(280, 38)
+layout_mode = 2
 text = "¿Olvidaste tu contraseña?"
 
-[node name="btn_google_login" type="Button" parent="Panel/Contenido"]
-layout_mode = 2
+[node name="btn_google_login" type="Button" parent="Panel/Contenido" unique_id=1657623840]
 custom_minimum_size = Vector2(280, 42)
+layout_mode = 2
 text = "G  Iniciar sesión con Google"
 
-[node name="btn_go_to_register" type="Button" parent="Panel/Contenido"]
-layout_mode = 2
+[node name="btn_go_to_register" type="Button" parent="Panel/Contenido" unique_id=1901820947]
 custom_minimum_size = Vector2(280, 42)
+layout_mode = 2
 text = "¿No tienes cuenta? Regístrate"
 
 [connection signal="pressed" from="Panel/Contenido/btn_login" to="." method="_on_login_pressed"]
