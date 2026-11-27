@@ -1,17 +1,20 @@
 extends Control
 
-@onready var input_username: LineEdit = $Panel/Contenido/input_username
-@onready var input_email: LineEdit = $Panel/Contenido/input_email
-@onready var input_password: LineEdit = $Panel/Contenido/input_password
-@onready var input_confirm_password: LineEdit = $Panel/Contenido/input_confirm_password
-@onready var lbl_message: Label = $Panel/Contenido/lbl_message
-@onready var btn_register: Button = $Panel/Contenido/btn_register
+@onready var input_username: LineEdit = $input_username
+@onready var input_email: LineEdit = $input_email
+@onready var input_password: LineEdit = $input_password
+@onready var input_confirm_password: LineEdit = $input_confirm_password
+@onready var lbl_message: Label = $lbl_message
+@onready var btn_register: Button = $btn_register
+@onready var btn_google_register: Button = $btn_register_google
 
-const MAP_SCENE_PATH := "res://Mapa_TESH/mapa_tesh.tscn"
+const LOGIN_SCENE_PATH := "res://Login/login.tscn"
 
 func _ready() -> void:
 	SupabaseManager.register_succeeded.connect(_on_register_succeeded)
 	SupabaseManager.register_failed.connect(_on_register_failed)
+	SupabaseManager.google_registration_succeeded.connect(_on_google_registration_succeeded)
+	SupabaseManager.login_failed.connect(_on_google_login_failed)
 
 func _on_register_pressed() -> void:
 	var username := input_username.text.strip_edges()
@@ -56,6 +59,22 @@ func _on_register_failed(error_message: String) -> void:
 	if message.is_empty():
 		message = "No se pudo completar el registro. Revisa tu conexión."
 	_show_error(message)
+
+func _on_google_register_pressed() -> void:
+	btn_google_register.disabled = true
+	lbl_message.text = "Continuando con Google en el navegador..."
+	lbl_message.modulate = Color.YELLOW
+	SupabaseManager.register_with_google()
+
+func _on_google_registration_succeeded(_user_data: Dictionary) -> void:
+	lbl_message.text = "Registro con Google completado. Volviendo al inicio de sesión..."
+	lbl_message.modulate = Color.GREEN
+	await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_file(LOGIN_SCENE_PATH)
+
+func _on_google_login_failed(error_message: String) -> void:
+	btn_google_register.disabled = false
+	_show_error(error_message)
 
 func _show_error(message: String) -> void:
 	lbl_message.text = message
